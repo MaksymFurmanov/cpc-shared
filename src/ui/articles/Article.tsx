@@ -1,11 +1,11 @@
 import styles from "./articles.module.css";
-import Gallery from "./Gallery";
+import {Gallery} from "./Gallery";
 import {useMemo} from "react";
 import ReactMarkdown from "react-markdown";
-import localizeArticle from "../../utils/localizeArticle";
+import {localizeArticle} from "../../utils";
 import {ArticleType, MultilingualArticle} from "../../types";
 
-export const Article = ({
+export function Article({
                             articleData,
                             type,
                             lang,
@@ -19,7 +19,7 @@ export const Article = ({
     t: (key: string) => string,
     onBack?: (type: ArticleType, page: number) => void,
     page?: number
-}) => {
+}) {
     const {title, text, date} = useMemo(
         () => localizeArticle(articleData, lang),
         [articleData, lang]

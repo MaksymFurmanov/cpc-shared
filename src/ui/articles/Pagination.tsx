@@ -1,7 +1,7 @@
 import styles from "./articles.module.css";
 import clsx from "clsx";
 
-export default function Pagination({curr, selectFn, total}: {
+export function Pagination({curr, selectFn, total}: {
     curr: number,
     selectFn: (index: number) => void,
     total: number,

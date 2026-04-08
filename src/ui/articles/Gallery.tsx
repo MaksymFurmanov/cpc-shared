@@ -4,7 +4,7 @@ import useEmblaCarousel from "embla-carousel-react";
 import clsx from "clsx";
 import GalleryLoading from "./skeletons/GalleryLoading";
 
-export default function Gallery({images, preloaded}: { images: string[], preloaded?: boolean }) {
+export function Gallery({images, preloaded}: { images: string[], preloaded?: boolean }) {
     const [emblaRef, emblaApi] = useEmblaCarousel({
         dragFree: true,
         loop: true,

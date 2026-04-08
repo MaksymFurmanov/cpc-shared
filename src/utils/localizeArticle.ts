@@ -1,6 +1,6 @@
 import {MultilingualArticle} from "../types";
 
-const localizeArticle = (event: MultilingualArticle, lang: string): {
+export const localizeArticle = (event: MultilingualArticle, lang: string): {
     title: string,
     text: string,
     date: string
@@ -25,5 +25,3 @@ const localizeArticle = (event: MultilingualArticle, lang: string): {
 
     return {title, text, date};
 }
-
-export default localizeArticle;

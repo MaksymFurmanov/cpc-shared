@@ -7,6 +7,7 @@
     "outDir": "dist",
     "strict": true,
 
+    "resolveJsonModule": true,
     "moduleResolution": "bundler",
     "esModuleInterop": true,
     "skipLibCheck": true,
