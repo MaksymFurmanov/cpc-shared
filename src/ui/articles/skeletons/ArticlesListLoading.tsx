@@ -1,5 +1,5 @@
 import styles from "./articles-skeletons.module.css";
-import ArticleLoading from "./ArticleLoading";
+import {ArticleLoading} from "./ArticleLoading";
 
 export default function ArticlesListLoading() {
     return (

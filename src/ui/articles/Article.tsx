@@ -32,11 +32,11 @@ export function Article({
     return (
         <article className={styles.article}>
             <button className={styles.backBtn} onClick={backHandler}>
-                ← &nbsp;{t("backBtn")}
+                ← &nbsp;{t("articles:backBtn")}
             </button>
 
             <div>
-                <Gallery images={articleData.images}/>
+                <Gallery images={articleData.images} />
             </div>
 
             <div className={styles.textContent}>

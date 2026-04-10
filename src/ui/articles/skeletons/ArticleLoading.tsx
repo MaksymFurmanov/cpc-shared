@@ -1,7 +1,7 @@
 import styles from "./articles-skeletons.module.css";
 import GalleryLoading from "./GalleryLoading";
 
-export default function ArticleLoading() {
+export function ArticleLoading() {
     return (
         <div className={styles.card}>
             <GalleryLoading />
@@ -18,5 +18,5 @@ export default function ArticleLoading() {
                 </div>
             </div>
         </div>
-    )
+    );
 }
