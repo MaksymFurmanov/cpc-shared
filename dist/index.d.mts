@@ -18,13 +18,11 @@ type MultilingualArticle = {
     type: ArticleType;
 };
 
-declare function Article({ articleData, type, lang, t, onBack, page, }: {
+declare function Article({ articleData, lang, t, onBack, }: {
     articleData: MultilingualArticle;
-    type: ArticleType;
     lang: string;
     t: (key: string) => string;
-    onBack?: (type: ArticleType, page: number) => void;
-    page?: number;
+    onBack: (type: ArticleType) => void;
 }): react_jsx_runtime.JSX.Element;
 
 declare function Gallery({ images, preloaded }: {

@@ -263,18 +263,16 @@ var i18n = {
 var import_jsx_runtime3 = require("react/jsx-runtime");
 function Article({
   articleData,
-  type,
   lang,
   t,
-  onBack,
-  page = 1
+  onBack
 }) {
   const { title, text, date } = (0, import_react.useMemo)(
     () => localizeArticle(articleData, lang),
     [articleData, lang]
   );
   const backHandler = () => {
-    onBack?.(type, page);
+    onBack(articleData.type);
   };
   return /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("article", { className: articles_default.article, children: [
     /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("button", { className: articles_default.backBtn, onClick: backHandler, children: [

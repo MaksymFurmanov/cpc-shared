@@ -7,18 +7,14 @@ import {ArticleType, MultilingualArticle} from "../../types";
 
 export function Article({
                             articleData,
-                            type,
                             lang,
                             t,
                             onBack,
-                            page = 1,
                         }: {
     articleData: MultilingualArticle,
-    type: ArticleType,
     lang: string,
     t: (key: string) => string,
-    onBack?: (type: ArticleType, page: number) => void,
-    page?: number
+    onBack: (type: ArticleType) => void,
 }) {
     const {title, text, date} = useMemo(
         () => localizeArticle(articleData, lang),
@@ -26,8 +22,8 @@ export function Article({
     );
 
     const backHandler = () => {
-        onBack?.(type, page);
-    };
+        onBack(articleData.type);
+    }
 
     return (
         <article className={styles.article}>
@@ -45,7 +41,9 @@ export function Article({
                 <b className={styles.date}>{date}</b>
 
                 <p className={styles.articleText}>
-                    <ReactMarkdown>{text}</ReactMarkdown>
+                    <ReactMarkdown>
+                        {text}
+                    </ReactMarkdown>
                 </p>
             </div>
         </article>

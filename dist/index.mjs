@@ -220,18 +220,16 @@ var i18n = {
 import { jsx as jsx3, jsxs as jsxs2 } from "react/jsx-runtime";
 function Article({
   articleData,
-  type,
   lang,
   t,
-  onBack,
-  page = 1
+  onBack
 }) {
   const { title, text, date } = useMemo(
     () => localizeArticle(articleData, lang),
     [articleData, lang]
   );
   const backHandler = () => {
-    onBack?.(type, page);
+    onBack(articleData.type);
   };
   return /* @__PURE__ */ jsxs2("article", { className: articles_default.article, children: [
     /* @__PURE__ */ jsxs2("button", { className: articles_default.backBtn, onClick: backHandler, children: [
