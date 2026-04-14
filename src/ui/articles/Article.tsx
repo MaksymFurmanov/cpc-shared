@@ -1,3 +1,5 @@
+"use client";
+
 import styles from "./articles.module.css";
 import {Gallery} from "./Gallery";
 import {useMemo} from "react";

@@ -1,3 +1,5 @@
+"use client";
+
 import styles from "./articles-skeletons.module.css";
 import GalleryLoading from "./GalleryLoading";
 

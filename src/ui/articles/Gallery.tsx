@@ -1,3 +1,5 @@
+"use client";
+
 import styles from "./articles.module.css";
 import {IoIosArrowBack, IoIosArrowForward} from "react-icons/io";
 import useEmblaCarousel from "embla-carousel-react";

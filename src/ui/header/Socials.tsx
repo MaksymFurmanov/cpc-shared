@@ -1,3 +1,5 @@
+"use client";
+
 import styles from "./header.module.css";
 import {FaFacebookF, FaViber, FaTelegramPlane} from "react-icons/fa";
 

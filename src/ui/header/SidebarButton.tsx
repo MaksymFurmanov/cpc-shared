@@ -1,3 +1,5 @@
+"use client";
+
 import styles from "./header.module.css";
 import {IoMdClose} from "react-icons/io";
 import {RiMenu2Line} from "react-icons/ri";

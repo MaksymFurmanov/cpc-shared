@@ -1,3 +1,5 @@
+"use client";
+
 import styles from "./header.module.css";
 import languages from "./languages";
 import clsx from "clsx";
