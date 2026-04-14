@@ -41,22 +41,21 @@ __export(index_exports, {
 });
 module.exports = __toCommonJS(index_exports);
 
-// src/ui/articles/articles.module.css
-var articles_default = {};
+// src/ui/articles/Article.tsx
+var import_articles5 = __toESM(require("./articles.module-G5BQISWY.module.css"));
 
 // src/ui/articles/Gallery.tsx
+var import_articles = __toESM(require("./articles.module-G5BQISWY.module.css"));
 var import_io = require("react-icons/io");
 var import_embla_carousel_react = __toESM(require("embla-carousel-react"));
 var import_clsx2 = __toESM(require("clsx"));
 
-// src/ui/articles/skeletons/articles-skeletons.module.css
-var articles_skeletons_default = {};
-
 // src/ui/articles/skeletons/GalleryLoading.tsx
+var import_articles_skeletons = __toESM(require("./articles-skeletons.module-V6WRGZMG.module.css"));
 var import_clsx = __toESM(require("clsx"));
 var import_jsx_runtime = require("react/jsx-runtime");
 function GalleryLoading() {
-  return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: (0, import_clsx.default)(articles_skeletons_default.gallerySkeleton, articles_skeletons_default.skeleton) });
+  return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: (0, import_clsx.default)(import_articles_skeletons.default.gallerySkeleton, import_articles_skeletons.default.skeleton) });
 }
 
 // src/ui/articles/Gallery.tsx
@@ -69,14 +68,14 @@ function Gallery({ images, preloaded }) {
   });
   if (!preloaded) return /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(GalleryLoading, {});
   const isOneImg = images.length === 1;
-  return /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)("div", { className: (0, import_clsx2.default)(articles_default.gallery, "not-selectable"), children: [
+  return /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)("div", { className: (0, import_clsx2.default)(import_articles.default.gallery, "not-selectable"), children: [
     !isOneImg && emblaApi?.canScrollPrev() && /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(import_io.IoIosArrowBack, { onClick: () => emblaApi.scrollPrev() }),
-    /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("div", { className: articles_default.carousel, ref: emblaRef, children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("div", { className: articles_default.wrapper, children: images.map((img, index) => /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(
+    /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("div", { className: import_articles.default.carousel, ref: emblaRef, children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("div", { className: import_articles.default.wrapper, children: images.map((img, index) => /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(
       "img",
       {
         src: img,
         alt: "",
-        className: articles_default.image
+        className: import_articles.default.image
       },
       index
     )) }) }),
@@ -109,7 +108,7 @@ var localizeArticle = (event, lang) => {
 };
 
 // src/utils/i18n/en/articles.json
-var articles_default2 = {
+var articles_default = {
   newsPageTitle: "News",
   eventsPageTitle: "Events",
   readMoreBtn: "Read more",
@@ -152,7 +151,7 @@ var nav_default = {
 };
 
 // src/utils/i18n/sk/articles.json
-var articles_default3 = {
+var articles_default2 = {
   newsPageTitle: "Aktuality",
   eventsPageTitle: "Podujatia",
   readMoreBtn: "Viac",
@@ -195,7 +194,7 @@ var nav_default2 = {
 };
 
 // src/utils/i18n/uk/articles.json
-var articles_default4 = {
+var articles_default3 = {
   newsPageTitle: "\u041D\u043E\u0432\u0438\u043D\u0438",
   eventsPageTitle: "\u0417\u0430\u0445\u043E\u0434\u0438",
   readMoreBtn: "\u0427\u0438\u0442\u0430\u0442\u0438 \u0434\u0430\u043B\u0456",
@@ -240,19 +239,19 @@ var nav_default3 = {
 // src/utils/i18n/index.tsx
 var i18n = {
   en: {
-    articles: articles_default2,
+    articles: articles_default,
     common: common_default,
     footer: footer_default,
     nav: nav_default
   },
   sk: {
-    articles: articles_default3,
+    articles: articles_default2,
     common: common_default2,
     footer: footer_default2,
     nav: nav_default2
   },
   uk: {
-    articles: articles_default4,
+    articles: articles_default3,
     common: common_default3,
     footer: footer_default3,
     nav: nav_default3
@@ -274,40 +273,44 @@ function Article({
   const backHandler = () => {
     onBack(articleData.type);
   };
-  return /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("article", { className: articles_default.article, children: [
-    /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("button", { className: articles_default.backBtn, onClick: backHandler, children: [
+  return /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("article", { className: import_articles5.default.article, children: [
+    /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("button", { className: import_articles5.default.backBtn, onClick: backHandler, children: [
       "\u2190 \xA0",
       t("articles:backBtn")
     ] }),
     /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("div", { children: /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(Gallery, { images: articleData.images }) }),
-    /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("div", { className: articles_default.textContent, children: [
-      /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("h2", { className: articles_default.articleTitle, children: title }),
-      /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("b", { className: articles_default.date, children: date }),
-      /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("p", { className: articles_default.articleText, children: /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(import_react_markdown.default, { children: text }) })
+    /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("div", { className: import_articles5.default.textContent, children: [
+      /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("h2", { className: import_articles5.default.articleTitle, children: title }),
+      /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("b", { className: import_articles5.default.date, children: date }),
+      /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("p", { className: import_articles5.default.articleText, children: /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(import_react_markdown.default, { children: text }) })
     ] })
   ] });
 }
 
 // src/ui/articles/skeletons/ArticleLoading.tsx
+var import_articles_skeletons2 = __toESM(require("./articles-skeletons.module-V6WRGZMG.module.css"));
 var import_jsx_runtime4 = require("react/jsx-runtime");
 function ArticleLoading() {
-  return /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)("div", { className: articles_skeletons_default.card, children: [
+  return /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)("div", { className: import_articles_skeletons2.default.card, children: [
     /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(GalleryLoading, {}),
-    /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)("div", { className: articles_skeletons_default.textContent, children: [
-      /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("div", { className: `${articles_skeletons_default.titleSkeleton} ${articles_skeletons_default.skeleton}` }),
-      /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("div", { className: `${articles_skeletons_default.dateSkeleton} ${articles_skeletons_default.skeleton}` }),
-      /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)("div", { className: articles_skeletons_default.textSkeleton, children: [
-        /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("span", { className: articles_skeletons_default.skeleton }),
-        /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("span", { className: articles_skeletons_default.skeleton }),
-        /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("span", { className: articles_skeletons_default.skeleton }),
-        /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("span", { className: articles_skeletons_default.skeleton })
+    /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)("div", { className: import_articles_skeletons2.default.textContent, children: [
+      /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("div", { className: `${import_articles_skeletons2.default.titleSkeleton} ${import_articles_skeletons2.default.skeleton}` }),
+      /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("div", { className: `${import_articles_skeletons2.default.dateSkeleton} ${import_articles_skeletons2.default.skeleton}` }),
+      /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)("div", { className: import_articles_skeletons2.default.textSkeleton, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("span", { className: import_articles_skeletons2.default.skeleton }),
+        /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("span", { className: import_articles_skeletons2.default.skeleton }),
+        /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("span", { className: import_articles_skeletons2.default.skeleton }),
+        /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("span", { className: import_articles_skeletons2.default.skeleton })
       ] })
     ] })
   ] });
 }
 
-// src/ui/header/header.module.css
-var header_default = {};
+// src/ui/header/Header.tsx
+var import_header5 = __toESM(require("./header.module-UHRJKHKQ.module.css"));
+
+// src/ui/header/NavBar.tsx
+var import_header = __toESM(require("./header.module-UHRJKHKQ.module.css"));
 
 // src/ui/header/nav-links.ts
 var navLinks = [
@@ -333,7 +336,7 @@ var nav_links_default = navLinks;
 // src/ui/header/NavBar.tsx
 var import_jsx_runtime5 = require("react/jsx-runtime");
 function NavBar({ t, appNavigate }) {
-  return /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("nav", { className: header_default.links, children: nav_links_default.map((link, index) => {
+  return /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("nav", { className: import_header.default.links, children: nav_links_default.map((link, index) => {
     return /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(
       "p",
       {
@@ -347,6 +350,7 @@ function NavBar({ t, appNavigate }) {
 }
 
 // src/ui/header/SidebarButton.tsx
+var import_header2 = __toESM(require("./header.module-UHRJKHKQ.module.css"));
 var import_io2 = require("react-icons/io");
 var import_ri = require("react-icons/ri");
 var import_jsx_runtime6 = require("react/jsx-runtime");
@@ -357,12 +361,15 @@ function SidebarButton({ sidebarToggle, toggleSidebar }) {
   const closeSidebar = () => {
     toggleSidebar(false);
   };
-  return /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("div", { className: header_default.burgerIconContainer, children: sidebarToggle ? /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(import_io2.IoMdClose, { onClick: () => {
+  return /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("div", { className: import_header2.default.burgerIconContainer, children: sidebarToggle ? /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(import_io2.IoMdClose, { onClick: () => {
     closeSidebar();
   } }) : /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(import_ri.RiMenu2Line, { onClick: () => {
     openSidebar();
   } }) });
 }
+
+// src/ui/header/LanguageSwitcher.tsx
+var import_header3 = __toESM(require("./header.module-UHRJKHKQ.module.css"));
 
 // src/ui/header/languages.ts
 var languages = [
@@ -395,11 +402,11 @@ function LanguageSwitcher({ lang, onLangChange }) {
   const selectedIndex = sortedLanguages.findIndex(
     (l) => l.systemName === lang
   );
-  return /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("div", { className: (0, import_clsx3.default)(header_default.languageSwitcher, "not-selectable"), children: /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("div", { className: header_default.languagesContainer, children: [
+  return /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("div", { className: (0, import_clsx3.default)(import_header3.default.languageSwitcher, "not-selectable"), children: /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("div", { className: import_header3.default.languagesContainer, children: [
     /* @__PURE__ */ (0, import_jsx_runtime7.jsx)(
       "div",
       {
-        className: header_default.selectedContainer,
+        className: import_header3.default.selectedContainer,
         style: {
           transform: `translateY(${selectedIndex * 2.5}em)`
         }
@@ -409,7 +416,7 @@ function LanguageSwitcher({ lang, onLangChange }) {
       return /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)(
         "div",
         {
-          className: header_default.languageVariant,
+          className: import_header3.default.languageVariant,
           onClick: () => {
             if (language.systemName !== lang) onLangChange(language.systemName);
           },
@@ -425,13 +432,14 @@ function LanguageSwitcher({ lang, onLangChange }) {
 }
 
 // src/ui/header/Socials.tsx
+var import_header4 = __toESM(require("./header.module-UHRJKHKQ.module.css"));
 var import_fa = require("react-icons/fa");
 var import_jsx_runtime8 = require("react/jsx-runtime");
 function Socials() {
-  return /* @__PURE__ */ (0, import_jsx_runtime8.jsxs)("div", { className: header_default.socials, children: [
-    /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("a", { className: header_default.socialsBtn, href: "https://www.facebook.com/CentrumPodporyCudzincovKosice", "aria-label": "Facebook", children: /* @__PURE__ */ (0, import_jsx_runtime8.jsx)(import_fa.FaFacebookF, {}) }),
-    /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("a", { className: header_default.socialsBtn, href: "https://t.me/+LjEG_D7cxxA0OTg8", "aria-label": "Telegram", children: /* @__PURE__ */ (0, import_jsx_runtime8.jsx)(import_fa.FaTelegramPlane, {}) }),
-    /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("a", { className: header_default.socialsBtn, href: "tel:+421908365995", "aria-label": "Viber", children: /* @__PURE__ */ (0, import_jsx_runtime8.jsx)(import_fa.FaViber, {}) })
+  return /* @__PURE__ */ (0, import_jsx_runtime8.jsxs)("div", { className: import_header4.default.socials, children: [
+    /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("a", { className: import_header4.default.socialsBtn, href: "https://www.facebook.com/CentrumPodporyCudzincovKosice", "aria-label": "Facebook", children: /* @__PURE__ */ (0, import_jsx_runtime8.jsx)(import_fa.FaFacebookF, {}) }),
+    /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("a", { className: import_header4.default.socialsBtn, href: "https://t.me/+LjEG_D7cxxA0OTg8", "aria-label": "Telegram", children: /* @__PURE__ */ (0, import_jsx_runtime8.jsx)(import_fa.FaTelegramPlane, {}) }),
+    /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("a", { className: import_header4.default.socialsBtn, href: "tel:+421908365995", "aria-label": "Viber", children: /* @__PURE__ */ (0, import_jsx_runtime8.jsx)(import_fa.FaViber, {}) })
   ] });
 }
 
@@ -453,12 +461,12 @@ function Header({
     "header",
     {
       style: { backgroundColor: isHomepage ? "transparent" : void 0 },
-      className: `${header_default.header} ${scrolled ? header_default.scrolled : ""}`,
+      className: `${import_header5.default.header} ${scrolled ? import_header5.default.scrolled : ""}`,
       children: [
         /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)(
           "div",
           {
-            className: (0, import_clsx4.default)(header_default.logo, "not-selectable"),
+            className: (0, import_clsx4.default)(import_header5.default.logo, "not-selectable"),
             onClick: handleToHomepage,
             children: [
               /* @__PURE__ */ (0, import_jsx_runtime9.jsx)(
@@ -466,7 +474,7 @@ function Header({
                 {
                   src: "/logo.png",
                   alt: "",
-                  className: header_default.cpcLogo
+                  className: import_header5.default.cpcLogo
                 }
               ),
               /* @__PURE__ */ (0, import_jsx_runtime9.jsx)(
@@ -474,14 +482,14 @@ function Header({
                 {
                   src: "/logo-white.svg",
                   alt: "Logo",
-                  className: header_default.kosiceLogo
+                  className: import_header5.default.kosiceLogo
                 }
               )
             ]
           }
         ),
         /* @__PURE__ */ (0, import_jsx_runtime9.jsx)(NavBar, { t, appNavigate }),
-        /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)("div", { className: header_default.buttonsRight, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)("div", { className: import_header5.default.buttonsRight, children: [
           /* @__PURE__ */ (0, import_jsx_runtime9.jsx)(
             LanguageSwitcher,
             {
@@ -503,45 +511,47 @@ function Header({
   );
 }
 
-// src/ui/footer/footer.module.css
-var footer_default4 = {};
+// src/ui/footer/Footer.tsx
+var import_footer7 = __toESM(require("./footer.module-2LSSSQZ2.module.css"));
 
 // src/ui/footer/FirstOfficeBlock.tsx
+var import_footer4 = __toESM(require("./footer.module-2LSSSQZ2.module.css"));
 var import_fa2 = require("react-icons/fa");
 var import_jsx_runtime10 = require("react/jsx-runtime");
 function FirstOfficeBlock({ t }) {
-  return /* @__PURE__ */ (0, import_jsx_runtime10.jsxs)("div", { className: footer_default4.block, children: [
-    /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("h3", { className: footer_default4.title, children: t("footer:leftSide.name") }),
-    /* @__PURE__ */ (0, import_jsx_runtime10.jsxs)("address", { className: footer_default4.address, children: [
+  return /* @__PURE__ */ (0, import_jsx_runtime10.jsxs)("div", { className: import_footer4.default.block, children: [
+    /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("h3", { className: import_footer4.default.title, children: t("footer:leftSide.name") }),
+    /* @__PURE__ */ (0, import_jsx_runtime10.jsxs)("address", { className: import_footer4.default.address, children: [
       "Hlavn\xE1 68, Ko\u0161ice, B 214, 2. posch.",
       /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("br", {}),
       "040 01, Star\xE9 Mesto"
     ] }),
-    /* @__PURE__ */ (0, import_jsx_runtime10.jsxs)("p", { className: footer_default4.line, children: [
+    /* @__PURE__ */ (0, import_jsx_runtime10.jsxs)("p", { className: import_footer4.default.line, children: [
       t("footer:phone"),
       ":",
       " ",
-      /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("a", { href: "tel:+421908365995", className: footer_default4.link, children: "+421 908 365 995" })
+      /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("a", { href: "tel:+421908365995", className: import_footer4.default.link, children: "+421 908 365 995" })
     ] }),
-    /* @__PURE__ */ (0, import_jsx_runtime10.jsxs)("p", { className: footer_default4.line, children: [
+    /* @__PURE__ */ (0, import_jsx_runtime10.jsxs)("p", { className: import_footer4.default.line, children: [
       "Email:",
       " ",
-      /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("a", { href: "mailto:centrumH68@kosice.sk", className: footer_default4.link, children: "centrumH68@kosice.sk" })
+      /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("a", { href: "mailto:centrumH68@kosice.sk", className: import_footer4.default.link, children: "centrumH68@kosice.sk" })
     ] }),
-    /* @__PURE__ */ (0, import_jsx_runtime10.jsxs)("div", { className: footer_default4.icons, children: [
-      /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("a", { className: footer_default4.iconBtn, href: "https://www.facebook.com/CentrumPodporyCudzincovKosice", "aria-label": "Facebook", children: /* @__PURE__ */ (0, import_jsx_runtime10.jsx)(import_fa2.FaFacebookF, {}) }),
-      /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("a", { className: footer_default4.iconBtn, href: "https://t.me/+LjEG_D7cxxA0OTg8", "aria-label": "Telegram", children: /* @__PURE__ */ (0, import_jsx_runtime10.jsx)(import_fa2.FaTelegramPlane, {}) }),
-      /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("a", { className: footer_default4.iconBtn, href: "tel:+421908365995", "aria-label": "Viber", children: /* @__PURE__ */ (0, import_jsx_runtime10.jsx)(import_fa2.FaViber, {}) })
+    /* @__PURE__ */ (0, import_jsx_runtime10.jsxs)("div", { className: import_footer4.default.icons, children: [
+      /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("a", { className: import_footer4.default.iconBtn, href: "https://www.facebook.com/CentrumPodporyCudzincovKosice", "aria-label": "Facebook", children: /* @__PURE__ */ (0, import_jsx_runtime10.jsx)(import_fa2.FaFacebookF, {}) }),
+      /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("a", { className: import_footer4.default.iconBtn, href: "https://t.me/+LjEG_D7cxxA0OTg8", "aria-label": "Telegram", children: /* @__PURE__ */ (0, import_jsx_runtime10.jsx)(import_fa2.FaTelegramPlane, {}) }),
+      /* @__PURE__ */ (0, import_jsx_runtime10.jsx)("a", { className: import_footer4.default.iconBtn, href: "tel:+421908365995", "aria-label": "Viber", children: /* @__PURE__ */ (0, import_jsx_runtime10.jsx)(import_fa2.FaViber, {}) })
     ] })
   ] });
 }
 
 // src/ui/footer/WorkHours.tsx
+var import_footer5 = __toESM(require("./footer.module-2LSSSQZ2.module.css"));
 var import_jsx_runtime11 = require("react/jsx-runtime");
 function WorkHours({ t }) {
-  return /* @__PURE__ */ (0, import_jsx_runtime11.jsxs)("div", { className: footer_default4.block, children: [
-    /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("h3", { className: footer_default4.title, children: t("footer:openingHours") }),
-    /* @__PURE__ */ (0, import_jsx_runtime11.jsxs)("ul", { className: footer_default4.hours, children: [
+  return /* @__PURE__ */ (0, import_jsx_runtime11.jsxs)("div", { className: import_footer5.default.block, children: [
+    /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("h3", { className: import_footer5.default.title, children: t("footer:openingHours") }),
+    /* @__PURE__ */ (0, import_jsx_runtime11.jsxs)("ul", { className: import_footer5.default.hours, children: [
       /* @__PURE__ */ (0, import_jsx_runtime11.jsxs)("li", { children: [
         /* @__PURE__ */ (0, import_jsx_runtime11.jsx)("span", { children: t("footer:week.monday") }),
         /* @__PURE__ */ (0, import_jsx_runtime11.jsxs)("span", { children: [
@@ -578,7 +588,7 @@ function WorkHours({ t }) {
         ] })
       ] })
     ] }),
-    /* @__PURE__ */ (0, import_jsx_runtime11.jsxs)("p", { className: footer_default4.note, children: [
+    /* @__PURE__ */ (0, import_jsx_runtime11.jsxs)("p", { className: import_footer5.default.note, children: [
       t("footer:lunchBreak"),
       ": 12:00 \u2013 12:30 h."
     ] })
@@ -586,20 +596,21 @@ function WorkHours({ t }) {
 }
 
 // src/ui/footer/SecondOfficeBlock.tsx
+var import_footer6 = __toESM(require("./footer.module-2LSSSQZ2.module.css"));
 var import_jsx_runtime12 = require("react/jsx-runtime");
 function SecondOfficeBlock({ t }) {
-  return /* @__PURE__ */ (0, import_jsx_runtime12.jsx)("div", { className: footer_default4.bottomGrid, children: /* @__PURE__ */ (0, import_jsx_runtime12.jsxs)("div", { className: footer_default4.block, children: [
-    /* @__PURE__ */ (0, import_jsx_runtime12.jsx)("h3", { className: footer_default4.title, children: t("footer:rightSide.name") }),
-    /* @__PURE__ */ (0, import_jsx_runtime12.jsxs)("address", { className: footer_default4.address, children: [
+  return /* @__PURE__ */ (0, import_jsx_runtime12.jsx)("div", { className: import_footer6.default.bottomGrid, children: /* @__PURE__ */ (0, import_jsx_runtime12.jsxs)("div", { className: import_footer6.default.block, children: [
+    /* @__PURE__ */ (0, import_jsx_runtime12.jsx)("h3", { className: import_footer6.default.title, children: t("footer:rightSide.name") }),
+    /* @__PURE__ */ (0, import_jsx_runtime12.jsxs)("address", { className: import_footer6.default.address, children: [
       "Tr. SNP 48/A,",
       /* @__PURE__ */ (0, import_jsx_runtime12.jsx)("br", {}),
       "04011, Ko\u0161ice-Z\xE1pad"
     ] }),
-    /* @__PURE__ */ (0, import_jsx_runtime12.jsxs)("p", { className: footer_default4.line, children: [
+    /* @__PURE__ */ (0, import_jsx_runtime12.jsxs)("p", { className: import_footer6.default.line, children: [
       t("footer:phone"),
       ":",
       " ",
-      /* @__PURE__ */ (0, import_jsx_runtime12.jsx)("a", { href: "tel:+421556419190", className: footer_default4.link, children: "+421 55 64 19 190" })
+      /* @__PURE__ */ (0, import_jsx_runtime12.jsx)("a", { href: "tel:+421556419190", className: import_footer6.default.link, children: "+421 55 64 19 190" })
     ] })
   ] }) });
 }
@@ -608,16 +619,16 @@ function SecondOfficeBlock({ t }) {
 var import_jsx_runtime13 = require("react/jsx-runtime");
 function Footer({ isHomePage = false, t }) {
   const year = (/* @__PURE__ */ new Date()).getFullYear();
-  return /* @__PURE__ */ (0, import_jsx_runtime13.jsx)("footer", { className: footer_default4.container, children: /* @__PURE__ */ (0, import_jsx_runtime13.jsxs)("div", { className: footer_default4.content, children: [
-    /* @__PURE__ */ (0, import_jsx_runtime13.jsxs)("div", { className: footer_default4.topGrid, children: [
+  return /* @__PURE__ */ (0, import_jsx_runtime13.jsx)("footer", { className: import_footer7.default.container, children: /* @__PURE__ */ (0, import_jsx_runtime13.jsxs)("div", { className: import_footer7.default.content, children: [
+    /* @__PURE__ */ (0, import_jsx_runtime13.jsxs)("div", { className: import_footer7.default.topGrid, children: [
       /* @__PURE__ */ (0, import_jsx_runtime13.jsx)(FirstOfficeBlock, { t }),
       isHomePage ? /* @__PURE__ */ (0, import_jsx_runtime13.jsx)(WorkHours, { t }) : /* @__PURE__ */ (0, import_jsx_runtime13.jsx)(SecondOfficeBlock, { t })
     ] }),
     isHomePage && /* @__PURE__ */ (0, import_jsx_runtime13.jsxs)(import_jsx_runtime13.Fragment, { children: [
-      /* @__PURE__ */ (0, import_jsx_runtime13.jsx)("hr", { className: footer_default4.divider }),
+      /* @__PURE__ */ (0, import_jsx_runtime13.jsx)("hr", { className: import_footer7.default.divider }),
       /* @__PURE__ */ (0, import_jsx_runtime13.jsx)(SecondOfficeBlock, { t })
     ] }),
-    /* @__PURE__ */ (0, import_jsx_runtime13.jsx)("div", { className: footer_default4.copyRow, children: /* @__PURE__ */ (0, import_jsx_runtime13.jsxs)("span", { children: [
+    /* @__PURE__ */ (0, import_jsx_runtime13.jsx)("div", { className: import_footer7.default.copyRow, children: /* @__PURE__ */ (0, import_jsx_runtime13.jsxs)("span", { children: [
       " \xA9 ",
       year,
       " Magistr\xE1t mesta Ko\u0161ice. V\u0161etky pr\xE1va vyhraden\xE9"

@@ -9,6 +9,7 @@ export default defineConfig({
 
     loader: {
         ".json": "json",
+        ".css": "copy",
     },
 
     external: ["react", "react-dom"],
