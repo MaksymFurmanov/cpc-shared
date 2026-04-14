@@ -1,18 +1,23 @@
 export enum ArticleType {
-    NEWS = "News",
-    EVENT = "Event"
+    NEWS = "news",
+    EVENT = "event"
 }
 
 export type MultilingualArticle = {
     id: string,
-    titleEN: string,
-    titleSK: string,
-    titleUA: string,
-    descriptionSK: string,
-    descriptionUA: string,
-    descriptionEN: string,
+    created_at: string,
     date: string,
-    showDate: boolean,
+
+    type: ArticleType,
+
+    title_sk: string,
+    title_ua: string,
+    title_en: string,
+
+    description_sk: string,
+    description_ua: string,
+    description_en: string,
+
     images: string[],
-    type: ArticleType
+    published: boolean,
 }

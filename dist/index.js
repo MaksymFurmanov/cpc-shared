@@ -638,8 +638,8 @@ function Footer({ isHomePage = false, t }) {
 
 // src/types/articles.ts
 var ArticleType = /* @__PURE__ */ ((ArticleType2) => {
-  ArticleType2["NEWS"] = "News";
-  ArticleType2["EVENT"] = "Event";
+  ArticleType2["NEWS"] = "news";
+  ArticleType2["EVENT"] = "event";
   return ArticleType2;
 })(ArticleType || {});
 // Annotate the CommonJS export names for ESM import in node:
