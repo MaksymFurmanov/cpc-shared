@@ -221,7 +221,8 @@ function Article({
   articleData,
   lang,
   t,
-  onBack
+  onBack,
+  preloadedImages
 }) {
   const { title, text, date } = useMemo(
     () => localizeArticle(articleData, lang),
@@ -235,7 +236,13 @@ function Article({
       "\u2190 \xA0",
       t("articles:backBtn")
     ] }),
-    /* @__PURE__ */ jsx3("div", { children: /* @__PURE__ */ jsx3(Gallery, { images: articleData.images }) }),
+    /* @__PURE__ */ jsx3("div", { children: /* @__PURE__ */ jsx3(
+      Gallery,
+      {
+        images: articleData.images,
+        preloaded: preloadedImages
+      }
+    ) }),
     /* @__PURE__ */ jsxs2("div", { className: styles3.textContent, children: [
       /* @__PURE__ */ jsx3("h2", { className: styles3.articleTitle, children: title }),
       /* @__PURE__ */ jsx3("b", { className: styles3.date, children: date }),

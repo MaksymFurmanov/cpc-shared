@@ -12,11 +12,13 @@ export function Article({
                             lang,
                             t,
                             onBack,
+                            preloadedImages
                         }: {
     articleData: MultilingualArticle,
     lang: string,
     t: (key: string) => string,
     onBack: (type: ArticleType) => void,
+    preloadedImages?: boolean
 }) {
     const {title, text, date} = useMemo(
         () => localizeArticle(articleData, lang),
@@ -34,7 +36,9 @@ export function Article({
             </button>
 
             <div>
-                <Gallery images={articleData.images} />
+                <Gallery images={articleData.images}
+                         preloaded={preloadedImages}
+                />
             </div>
 
             <div className={styles.textContent}>

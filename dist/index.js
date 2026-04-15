@@ -264,7 +264,8 @@ function Article({
   articleData,
   lang,
   t,
-  onBack
+  onBack,
+  preloadedImages
 }) {
   const { title, text, date } = (0, import_react.useMemo)(
     () => localizeArticle(articleData, lang),
@@ -278,7 +279,13 @@ function Article({
       "\u2190 \xA0",
       t("articles:backBtn")
     ] }),
-    /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("div", { children: /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(Gallery, { images: articleData.images }) }),
+    /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("div", { children: /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(
+      Gallery,
+      {
+        images: articleData.images,
+        preloaded: preloadedImages
+      }
+    ) }),
     /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("div", { className: import_articles5.default.textContent, children: [
       /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("h2", { className: import_articles5.default.articleTitle, children: title }),
       /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("b", { className: import_articles5.default.date, children: date }),
