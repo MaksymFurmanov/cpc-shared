@@ -149,7 +149,7 @@ function ArticleText({ articleData, lang, Content }) {
   return /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { className: import_articles4.default.textContent, children: [
     /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("h2", { className: import_articles4.default.articleTitle, children: title }),
     /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("b", { className: import_articles4.default.date, children: date }),
-    /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("div", { className: import_articles4.default.articleText, children: /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(Content, { text }) })
+    /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("div", { className: import_articles4.default.articleText, children: /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(Content, { text, articleId: articleData.id }) })
   ] });
 }
 

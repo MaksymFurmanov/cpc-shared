@@ -22,7 +22,7 @@
 @property --accent {
     syntax: "<color>";
     inherits: false;
-    initial-value: #a1f699;
+    initial-value: #21c788;
 }
 
 @property --main-black {
