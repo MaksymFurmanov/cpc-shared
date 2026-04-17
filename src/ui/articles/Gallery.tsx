@@ -5,13 +5,16 @@ import {IoIosArrowBack, IoIosArrowForward} from "react-icons/io";
 import useEmblaCarousel from "embla-carousel-react";
 import clsx from "clsx";
 import GalleryLoading from "./skeletons/GalleryLoading";
+import {useImgPreload} from "../../hooks";
 
-export function Gallery({images, preloaded}: { images: string[], preloaded?: boolean }) {
+export function Gallery({images}: { images: string[] }) {
     const [emblaRef, emblaApi] = useEmblaCarousel({
         dragFree: true,
         loop: true,
         containScroll: "trimSnaps",
     });
+
+    const preloaded = useImgPreload(images);
 
     if (!preloaded) return <GalleryLoading/>;
 

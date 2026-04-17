@@ -35,7 +35,8 @@ __export(index_exports, {
   ArticleText: () => ArticleText,
   ArticleType: () => ArticleType,
   BackBtn: () => BackBtn,
-  Gallery: () => Gallery
+  Gallery: () => Gallery,
+  useImgPreload: () => useImgPreload
 });
 module.exports = __toCommonJS(index_exports);
 
@@ -67,14 +68,40 @@ function GalleryLoading() {
   return /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("div", { className: (0, import_clsx.default)(import_articles_skeletons.default.gallerySkeleton, import_articles_skeletons.default.skeleton) });
 }
 
+// src/hooks/useImgPreload.ts
+var import_react = require("react");
+function useImgPreload(images) {
+  const [ready, setReady] = (0, import_react.useState)(false);
+  (0, import_react.useEffect)(() => {
+    let active = true;
+    Promise.all(
+      images.map(
+        (src) => new Promise((resolve, reject) => {
+          const img = new Image();
+          img.src = src;
+          img.onload = () => resolve();
+          img.onerror = reject;
+        })
+      )
+    ).then(() => {
+      if (active) setReady(true);
+    });
+    return () => {
+      active = false;
+    };
+  }, [images]);
+  return ready;
+}
+
 // src/ui/articles/Gallery.tsx
 var import_jsx_runtime4 = require("react/jsx-runtime");
-function Gallery({ images, preloaded }) {
+function Gallery({ images }) {
   const [emblaRef, emblaApi] = (0, import_embla_carousel_react.default)({
     dragFree: true,
     loop: true,
     containScroll: "trimSnaps"
   });
+  const preloaded = useImgPreload(images);
   if (!preloaded) return /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(GalleryLoading, {});
   const isOneImg = images.length === 1;
   return /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("div", { children: /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)("div", { className: (0, import_clsx2.default)(import_articles3.default.gallery, "not-selectable"), children: [
@@ -158,6 +185,7 @@ var ArticleType = /* @__PURE__ */ ((ArticleType2) => {
   ArticleText,
   ArticleType,
   BackBtn,
-  Gallery
+  Gallery,
+  useImgPreload
 });
 //# sourceMappingURL=index.js.map

@@ -26,14 +26,40 @@ function GalleryLoading() {
   return /* @__PURE__ */ jsx3("div", { className: clsx(styles3.gallerySkeleton, styles3.skeleton) });
 }
 
+// src/hooks/useImgPreload.ts
+import { useEffect, useState } from "react";
+function useImgPreload(images) {
+  const [ready, setReady] = useState(false);
+  useEffect(() => {
+    let active = true;
+    Promise.all(
+      images.map(
+        (src) => new Promise((resolve, reject) => {
+          const img = new Image();
+          img.src = src;
+          img.onload = () => resolve();
+          img.onerror = reject;
+        })
+      )
+    ).then(() => {
+      if (active) setReady(true);
+    });
+    return () => {
+      active = false;
+    };
+  }, [images]);
+  return ready;
+}
+
 // src/ui/articles/Gallery.tsx
 import { jsx as jsx4, jsxs } from "react/jsx-runtime";
-function Gallery({ images, preloaded }) {
+function Gallery({ images }) {
   const [emblaRef, emblaApi] = useEmblaCarousel({
     dragFree: true,
     loop: true,
     containScroll: "trimSnaps"
   });
+  const preloaded = useImgPreload(images);
   if (!preloaded) return /* @__PURE__ */ jsx4(GalleryLoading, {});
   const isOneImg = images.length === 1;
   return /* @__PURE__ */ jsx4("div", { children: /* @__PURE__ */ jsxs("div", { className: clsx2(styles4.gallery, "not-selectable"), children: [
@@ -116,6 +142,7 @@ export {
   ArticleText,
   ArticleType,
   BackBtn,
-  Gallery
+  Gallery,
+  useImgPreload
 };
 //# sourceMappingURL=index.mjs.map
