@@ -132,7 +132,7 @@
     display: none;
 }
 
-.article {
+.ArticleContainer {
     max-width: 64em;
     margin: 2em min(7%, 2em);
 }
@@ -184,7 +184,7 @@
         margin: 0.5em;
     }
 
-    .article {
+    .ArticleContainer {
         margin: 2em auto 3em auto;
         padding: 0 1.5em;
     }

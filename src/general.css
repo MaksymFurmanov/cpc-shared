@@ -19,6 +19,12 @@
     font-style: normal;
 }
 
+@property --accent {
+    syntax: "<color>";
+    inherits: false;
+    initial-value: #a1f699;
+}
+
 @property --main-black {
     syntax: "<color>";
     inherits: false;

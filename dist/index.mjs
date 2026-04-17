@@ -1,48 +1,58 @@
-// src/ui/articles/Article.tsx
-import styles3 from "./articles.module-G5BQISWY.module.css";
+// src/ui/articles/ArticleContainer.tsx
+import styles from "./articles.module-4N4QPOVW.module.css";
+import { jsx } from "react/jsx-runtime";
+function ArticleContainer({ children }) {
+  return /* @__PURE__ */ jsx("article", { className: styles.ArticleContainer, children });
+}
+
+// src/ui/articles/BackBtn.tsx
+import styles2 from "./articles.module-4N4QPOVW.module.css";
+import { jsx as jsx2 } from "react/jsx-runtime";
+function BackBtn({ children, onBack }) {
+  return /* @__PURE__ */ jsx2("button", { className: styles2.backBtn, onClick: () => onBack(), children });
+}
 
 // src/ui/articles/Gallery.tsx
-import styles2 from "./articles.module-G5BQISWY.module.css";
+import styles4 from "./articles.module-4N4QPOVW.module.css";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import useEmblaCarousel from "embla-carousel-react";
 import clsx2 from "clsx";
 
 // src/ui/articles/skeletons/GalleryLoading.tsx
-import styles from "./articles-skeletons.module-V6WRGZMG.module.css";
+import styles3 from "./articles-skeletons.module-V6WRGZMG.module.css";
 import clsx from "clsx";
-import { jsx } from "react/jsx-runtime";
+import { jsx as jsx3 } from "react/jsx-runtime";
 function GalleryLoading() {
-  return /* @__PURE__ */ jsx("div", { className: clsx(styles.gallerySkeleton, styles.skeleton) });
+  return /* @__PURE__ */ jsx3("div", { className: clsx(styles3.gallerySkeleton, styles3.skeleton) });
 }
 
 // src/ui/articles/Gallery.tsx
-import { jsx as jsx2, jsxs } from "react/jsx-runtime";
+import { jsx as jsx4, jsxs } from "react/jsx-runtime";
 function Gallery({ images, preloaded }) {
   const [emblaRef, emblaApi] = useEmblaCarousel({
     dragFree: true,
     loop: true,
     containScroll: "trimSnaps"
   });
-  if (!preloaded) return /* @__PURE__ */ jsx2(GalleryLoading, {});
+  if (!preloaded) return /* @__PURE__ */ jsx4(GalleryLoading, {});
   const isOneImg = images.length === 1;
-  return /* @__PURE__ */ jsxs("div", { className: clsx2(styles2.gallery, "not-selectable"), children: [
-    !isOneImg && emblaApi?.canScrollPrev() && /* @__PURE__ */ jsx2(IoIosArrowBack, { onClick: () => emblaApi.scrollPrev() }),
-    /* @__PURE__ */ jsx2("div", { className: styles2.carousel, ref: emblaRef, children: /* @__PURE__ */ jsx2("div", { className: styles2.wrapper, children: images.map((img, index) => /* @__PURE__ */ jsx2(
+  return /* @__PURE__ */ jsx4("div", { children: /* @__PURE__ */ jsxs("div", { className: clsx2(styles4.gallery, "not-selectable"), children: [
+    !isOneImg && emblaApi?.canScrollPrev() && /* @__PURE__ */ jsx4(IoIosArrowBack, { onClick: () => emblaApi.scrollPrev() }),
+    /* @__PURE__ */ jsx4("div", { className: styles4.carousel, ref: emblaRef, children: /* @__PURE__ */ jsx4("div", { className: styles4.wrapper, children: images.map((img, index) => /* @__PURE__ */ jsx4(
       "img",
       {
         src: img,
         alt: "",
-        className: styles2.image
+        className: styles4.image
       },
       index
     )) }) }),
-    !isOneImg && emblaApi?.canScrollNext() && /* @__PURE__ */ jsx2(IoIosArrowForward, { onClick: () => emblaApi.scrollNext() })
-  ] });
+    !isOneImg && emblaApi?.canScrollNext() && /* @__PURE__ */ jsx4(IoIosArrowForward, { onClick: () => emblaApi.scrollNext() })
+  ] }) });
 }
 
-// src/ui/articles/Article.tsx
-import { useMemo } from "react";
-import ReactMarkdown from "react-markdown";
+// src/ui/articles/ArticleText.tsx
+import styles5 from "./articles.module-4N4QPOVW.module.css";
 
 // src/utils/localizeArticle.ts
 var localizeArticle = (event, lang) => {
@@ -64,56 +74,31 @@ var localizeArticle = (event, lang) => {
   return { title, text, date };
 };
 
-// src/ui/articles/Article.tsx
-import { jsx as jsx3, jsxs as jsxs2 } from "react/jsx-runtime";
-function Article({
-  articleData,
-  lang,
-  t,
-  onBack,
-  preloadedImages
-}) {
-  const { title, text, date } = useMemo(
-    () => localizeArticle(articleData, lang),
-    [articleData, lang]
-  );
-  const backHandler = () => {
-    onBack(articleData.type);
-  };
-  return /* @__PURE__ */ jsxs2("article", { className: styles3.article, children: [
-    /* @__PURE__ */ jsxs2("button", { className: styles3.backBtn, onClick: backHandler, children: [
-      "\u2190 \xA0",
-      t("articles:backBtn")
-    ] }),
-    /* @__PURE__ */ jsx3("div", { children: /* @__PURE__ */ jsx3(
-      Gallery,
-      {
-        images: articleData.images,
-        preloaded: preloadedImages
-      }
-    ) }),
-    /* @__PURE__ */ jsxs2("div", { className: styles3.textContent, children: [
-      /* @__PURE__ */ jsx3("h2", { className: styles3.articleTitle, children: title }),
-      /* @__PURE__ */ jsx3("b", { className: styles3.date, children: date }),
-      /* @__PURE__ */ jsx3("p", { className: styles3.articleText, children: /* @__PURE__ */ jsx3(ReactMarkdown, { children: text }) })
-    ] })
+// src/ui/articles/ArticleText.tsx
+import { jsx as jsx5, jsxs as jsxs2 } from "react/jsx-runtime";
+function ArticleText({ articleData, lang, Content }) {
+  const { title, text, date } = localizeArticle(articleData, lang);
+  return /* @__PURE__ */ jsxs2("div", { className: styles5.textContent, children: [
+    /* @__PURE__ */ jsx5("h2", { className: styles5.articleTitle, children: title }),
+    /* @__PURE__ */ jsx5("b", { className: styles5.date, children: date }),
+    /* @__PURE__ */ jsx5("div", { className: styles5.articleText, children: /* @__PURE__ */ jsx5(Content, { text }) })
   ] });
 }
 
 // src/ui/articles/skeletons/ArticleLoading.tsx
-import styles4 from "./articles-skeletons.module-V6WRGZMG.module.css";
-import { jsx as jsx4, jsxs as jsxs3 } from "react/jsx-runtime";
+import styles6 from "./articles-skeletons.module-V6WRGZMG.module.css";
+import { jsx as jsx6, jsxs as jsxs3 } from "react/jsx-runtime";
 function ArticleLoading() {
-  return /* @__PURE__ */ jsxs3("div", { className: styles4.card, children: [
-    /* @__PURE__ */ jsx4(GalleryLoading, {}),
-    /* @__PURE__ */ jsxs3("div", { className: styles4.textContent, children: [
-      /* @__PURE__ */ jsx4("div", { className: `${styles4.titleSkeleton} ${styles4.skeleton}` }),
-      /* @__PURE__ */ jsx4("div", { className: `${styles4.dateSkeleton} ${styles4.skeleton}` }),
-      /* @__PURE__ */ jsxs3("div", { className: styles4.textSkeleton, children: [
-        /* @__PURE__ */ jsx4("span", { className: styles4.skeleton }),
-        /* @__PURE__ */ jsx4("span", { className: styles4.skeleton }),
-        /* @__PURE__ */ jsx4("span", { className: styles4.skeleton }),
-        /* @__PURE__ */ jsx4("span", { className: styles4.skeleton })
+  return /* @__PURE__ */ jsxs3("div", { className: styles6.card, children: [
+    /* @__PURE__ */ jsx6(GalleryLoading, {}),
+    /* @__PURE__ */ jsxs3("div", { className: styles6.textContent, children: [
+      /* @__PURE__ */ jsx6("div", { className: `${styles6.titleSkeleton} ${styles6.skeleton}` }),
+      /* @__PURE__ */ jsx6("div", { className: `${styles6.dateSkeleton} ${styles6.skeleton}` }),
+      /* @__PURE__ */ jsxs3("div", { className: styles6.textSkeleton, children: [
+        /* @__PURE__ */ jsx6("span", { className: styles6.skeleton }),
+        /* @__PURE__ */ jsx6("span", { className: styles6.skeleton }),
+        /* @__PURE__ */ jsx6("span", { className: styles6.skeleton }),
+        /* @__PURE__ */ jsx6("span", { className: styles6.skeleton })
       ] })
     ] })
   ] });
@@ -126,9 +111,11 @@ var ArticleType = /* @__PURE__ */ ((ArticleType2) => {
   return ArticleType2;
 })(ArticleType || {});
 export {
-  Article,
+  ArticleContainer,
   ArticleLoading,
+  ArticleText,
   ArticleType,
-  localizeArticle
+  BackBtn,
+  Gallery
 };
 //# sourceMappingURL=index.mjs.map
