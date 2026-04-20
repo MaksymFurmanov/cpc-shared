@@ -107,7 +107,14 @@ function ArticleText({ articleData, lang, Content }) {
   return /* @__PURE__ */ jsxs2("div", { className: styles5.textContent, children: [
     /* @__PURE__ */ jsx5("h2", { className: styles5.articleTitle, children: title }),
     /* @__PURE__ */ jsx5("b", { className: styles5.date, children: date }),
-    /* @__PURE__ */ jsx5("div", { className: styles5.articleText, children: /* @__PURE__ */ jsx5(Content, { text, articleId: articleData.id }) })
+    /* @__PURE__ */ jsx5("div", { className: styles5.articleText, children: /* @__PURE__ */ jsx5(
+      Content,
+      {
+        text,
+        lang,
+        articleId: articleData.id
+      }
+    ) })
   ] });
 }
 
