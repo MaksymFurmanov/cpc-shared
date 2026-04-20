@@ -24,6 +24,8 @@
     align-items: center;
     justify-content: center;
     gap: 0.5em;
+    max-width: 70dvw;
+    margin: 0 auto;
 }
 
 .gallery svg {

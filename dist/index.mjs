@@ -1,19 +1,19 @@
 // src/ui/articles/ArticleContainer.tsx
-import styles from "./articles.module-S2YHXLNP.module.css";
+import styles from "./articles.module-2IFUF3IW.module.css";
 import { jsx } from "react/jsx-runtime";
 function ArticleContainer({ children }) {
   return /* @__PURE__ */ jsx("article", { className: styles.ArticleContainer, children });
 }
 
 // src/ui/articles/BackBtn.tsx
-import styles2 from "./articles.module-S2YHXLNP.module.css";
+import styles2 from "./articles.module-2IFUF3IW.module.css";
 import { jsx as jsx2 } from "react/jsx-runtime";
 function BackBtn({ children, onBack }) {
   return /* @__PURE__ */ jsx2("button", { className: styles2.backBtn, onClick: () => onBack(), children });
 }
 
 // src/ui/articles/Gallery.tsx
-import styles4 from "./articles.module-S2YHXLNP.module.css";
+import styles4 from "./articles.module-2IFUF3IW.module.css";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import useEmblaCarousel from "embla-carousel-react";
 import clsx2 from "clsx";
@@ -78,7 +78,7 @@ function Gallery({ images }) {
 }
 
 // src/ui/articles/ArticleText.tsx
-import styles5 from "./articles.module-S2YHXLNP.module.css";
+import styles5 from "./articles.module-2IFUF3IW.module.css";
 
 // src/utils/localizeArticle.ts
 var localizeArticle = (event, lang) => {

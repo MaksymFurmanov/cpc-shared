@@ -41,21 +41,21 @@ __export(index_exports, {
 module.exports = __toCommonJS(index_exports);
 
 // src/ui/articles/ArticleContainer.tsx
-var import_articles = __toESM(require("./articles.module-S2YHXLNP.module.css"));
+var import_articles = __toESM(require("./articles.module-2IFUF3IW.module.css"));
 var import_jsx_runtime = require("react/jsx-runtime");
 function ArticleContainer({ children }) {
   return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("article", { className: import_articles.default.ArticleContainer, children });
 }
 
 // src/ui/articles/BackBtn.tsx
-var import_articles2 = __toESM(require("./articles.module-S2YHXLNP.module.css"));
+var import_articles2 = __toESM(require("./articles.module-2IFUF3IW.module.css"));
 var import_jsx_runtime2 = require("react/jsx-runtime");
 function BackBtn({ children, onBack }) {
   return /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("button", { className: import_articles2.default.backBtn, onClick: () => onBack(), children });
 }
 
 // src/ui/articles/Gallery.tsx
-var import_articles3 = __toESM(require("./articles.module-S2YHXLNP.module.css"));
+var import_articles3 = __toESM(require("./articles.module-2IFUF3IW.module.css"));
 var import_io = require("react-icons/io");
 var import_embla_carousel_react = __toESM(require("embla-carousel-react"));
 var import_clsx2 = __toESM(require("clsx"));
@@ -120,7 +120,7 @@ function Gallery({ images }) {
 }
 
 // src/ui/articles/ArticleText.tsx
-var import_articles4 = __toESM(require("./articles.module-S2YHXLNP.module.css"));
+var import_articles4 = __toESM(require("./articles.module-2IFUF3IW.module.css"));
 
 // src/utils/localizeArticle.ts
 var localizeArticle = (event, lang) => {
