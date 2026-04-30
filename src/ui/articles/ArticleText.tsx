@@ -1,13 +1,14 @@
 "use client";
 
 import styles from "./articles.module.css";
-import { localizeArticle } from "../../utils/localizeArticle";
-import { MultilingualArticle } from "../../types";
+import {localizeArticle} from "../../utils/localizeArticle";
+import {MultilingualArticle} from "../../types";
 import {ComponentType} from "react";
 
 type ContentProps = {
-    text: string  | null,
-    articleId: string,
+    text: string | null,
+    lang: string,
+    articleId: string
 }
 
 export function ArticleText({articleData, lang, Content,}: {
@@ -15,7 +16,7 @@ export function ArticleText({articleData, lang, Content,}: {
     lang: string,
     Content: ComponentType<ContentProps>
 }) {
-    const { title, text, date } = localizeArticle(articleData, lang);
+    const {title, text, date} = localizeArticle(articleData, lang);
 
     if (!text) return null;
 
@@ -27,6 +28,7 @@ export function ArticleText({articleData, lang, Content,}: {
 
             <div className={styles.articleText}>
                 <Content text={text}
+                         lang={lang}
                          articleId={articleData.id}
                 />
             </div>
