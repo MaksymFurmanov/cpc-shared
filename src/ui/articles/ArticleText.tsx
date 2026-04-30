@@ -6,9 +6,9 @@ import { MultilingualArticle } from "../../types";
 import {ComponentType} from "react";
 
 type ContentProps = {
-    text: string,
+    text: string  | null,
     lang: string,
-    articleId?: string,
+    articleId: string,
 }
 
 export function ArticleText({articleData, lang, Content,}: {
