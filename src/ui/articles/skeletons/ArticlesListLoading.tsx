@@ -1,5 +1,3 @@
-"use client";
-
 import styles from "./articles-skeletons.module.css";
 import {ArticleLoading} from "./ArticleLoading";
 
