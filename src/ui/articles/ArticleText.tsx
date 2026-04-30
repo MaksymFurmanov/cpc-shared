@@ -1,3 +1,5 @@
+"use client";
+
 import styles from "./articles.module.css";
 import { localizeArticle } from "../../utils/localizeArticle";
 import { MultilingualArticle } from "../../types";
