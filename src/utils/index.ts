@@ -1,0 +1,1 @@
+export {localizeArticle} from "./localizeArticle";

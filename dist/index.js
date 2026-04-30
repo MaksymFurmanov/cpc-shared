@@ -37,6 +37,7 @@ __export(index_exports, {
   ArticlesListLoading: () => ArticlesListLoading,
   BackBtn: () => BackBtn,
   Gallery: () => Gallery,
+  localizeArticle: () => localizeArticle,
   useImgPreload: () => useImgPreload
 });
 module.exports = __toCommonJS(index_exports);
@@ -166,6 +167,26 @@ var ArticleType = /* @__PURE__ */ ((ArticleType2) => {
   ArticleType2["EVENT"] = "event";
   return ArticleType2;
 })(ArticleType || {});
+
+// src/utils/localizeArticle.ts
+var localizeArticle = (event, lang) => {
+  let title, text;
+  switch (lang) {
+    case "en":
+      title = event.title_en;
+      text = event.description_en;
+      break;
+    case "uk":
+      title = event.title_ua;
+      text = event.description_ua;
+      break;
+    default:
+      title = event.title_sk;
+      text = event.description_sk;
+  }
+  const date = new Date(event.date).toLocaleDateString(lang);
+  return { title, text, date };
+};
 // Annotate the CommonJS export names for ESM import in node:
 0 && (module.exports = {
   ArticleContainer,
@@ -175,6 +196,7 @@ var ArticleType = /* @__PURE__ */ ((ArticleType2) => {
   ArticlesListLoading,
   BackBtn,
   Gallery,
+  localizeArticle,
   useImgPreload
 });
 //# sourceMappingURL=index.js.map

@@ -123,6 +123,26 @@ var ArticleType = /* @__PURE__ */ ((ArticleType2) => {
   ArticleType2["EVENT"] = "event";
   return ArticleType2;
 })(ArticleType || {});
+
+// src/utils/localizeArticle.ts
+var localizeArticle = (event, lang) => {
+  let title, text;
+  switch (lang) {
+    case "en":
+      title = event.title_en;
+      text = event.description_en;
+      break;
+    case "uk":
+      title = event.title_ua;
+      text = event.description_ua;
+      break;
+    default:
+      title = event.title_sk;
+      text = event.description_sk;
+  }
+  const date = new Date(event.date).toLocaleDateString(lang);
+  return { title, text, date };
+};
 export {
   ArticleContainer,
   ArticleLoading,
@@ -131,6 +151,7 @@ export {
   ArticlesListLoading,
   BackBtn,
   Gallery,
+  localizeArticle,
   useImgPreload
 };
 //# sourceMappingURL=index.mjs.map
