@@ -18,6 +18,8 @@ export function ArticleText({articleData, lang, Content,}: {
 }) {
     const { title, text, date } = localizeArticle(articleData, lang);
 
+    if (!text) return null;
+
     return (
         <div className={styles.textContent}>
             <h2 className={styles.articleTitle}>{title}</h2>

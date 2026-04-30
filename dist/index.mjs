@@ -104,6 +104,7 @@ var localizeArticle = (event, lang) => {
 import { jsx as jsx5, jsxs as jsxs2 } from "react/jsx-runtime";
 function ArticleText({ articleData, lang, Content }) {
   const { title, text, date } = localizeArticle(articleData, lang);
+  if (!text) return null;
   return /* @__PURE__ */ jsxs2("div", { className: styles5.textContent, children: [
     /* @__PURE__ */ jsx5("h2", { className: styles5.articleTitle, children: title }),
     /* @__PURE__ */ jsx5("b", { className: styles5.date, children: date }),

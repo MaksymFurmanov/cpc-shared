@@ -146,6 +146,7 @@ var localizeArticle = (event, lang) => {
 var import_jsx_runtime5 = require("react/jsx-runtime");
 function ArticleText({ articleData, lang, Content }) {
   const { title, text, date } = localizeArticle(articleData, lang);
+  if (!text) return null;
   return /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { className: import_articles4.default.textContent, children: [
     /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("h2", { className: import_articles4.default.articleTitle, children: title }),
     /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("b", { className: import_articles4.default.date, children: date }),
