@@ -122,43 +122,12 @@ function Gallery({ images }) {
 
 // src/ui/articles/ArticleText.tsx
 var import_articles4 = __toESM(require("./articles.module-2IFUF3IW.module.css"));
-
-// src/utils/localizeArticle.ts
-var localizeArticle = (event, lang) => {
-  let title, text;
-  switch (lang) {
-    case "en":
-      title = event.title_en;
-      text = event.description_en;
-      break;
-    case "uk":
-      title = event.title_ua;
-      text = event.description_ua;
-      break;
-    default:
-      title = event.title_sk;
-      text = event.description_sk;
-  }
-  const date = new Date(event.date).toLocaleDateString(lang);
-  return { title, text, date };
-};
-
-// src/ui/articles/ArticleText.tsx
 var import_jsx_runtime5 = require("react/jsx-runtime");
-function ArticleText({ articleData, lang, Content }) {
-  const { title, text, date } = localizeArticle(articleData, lang);
-  if (!text) return null;
+function ArticleText({ title, date, children }) {
   return /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { className: import_articles4.default.textContent, children: [
     /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("h2", { className: import_articles4.default.articleTitle, children: title }),
     /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("b", { className: import_articles4.default.date, children: date }),
-    /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("div", { className: import_articles4.default.articleText, children: /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(
-      Content,
-      {
-        text,
-        lang,
-        articleId: articleData.id
-      }
-    ) })
+    /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("div", { className: import_articles4.default.articleText, children })
   ] });
 }
 

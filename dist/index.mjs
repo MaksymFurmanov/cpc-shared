@@ -79,43 +79,12 @@ function Gallery({ images }) {
 
 // src/ui/articles/ArticleText.tsx
 import styles5 from "./articles.module-2IFUF3IW.module.css";
-
-// src/utils/localizeArticle.ts
-var localizeArticle = (event, lang) => {
-  let title, text;
-  switch (lang) {
-    case "en":
-      title = event.title_en;
-      text = event.description_en;
-      break;
-    case "uk":
-      title = event.title_ua;
-      text = event.description_ua;
-      break;
-    default:
-      title = event.title_sk;
-      text = event.description_sk;
-  }
-  const date = new Date(event.date).toLocaleDateString(lang);
-  return { title, text, date };
-};
-
-// src/ui/articles/ArticleText.tsx
 import { jsx as jsx5, jsxs as jsxs2 } from "react/jsx-runtime";
-function ArticleText({ articleData, lang, Content }) {
-  const { title, text, date } = localizeArticle(articleData, lang);
-  if (!text) return null;
+function ArticleText({ title, date, children }) {
   return /* @__PURE__ */ jsxs2("div", { className: styles5.textContent, children: [
     /* @__PURE__ */ jsx5("h2", { className: styles5.articleTitle, children: title }),
     /* @__PURE__ */ jsx5("b", { className: styles5.date, children: date }),
-    /* @__PURE__ */ jsx5("div", { className: styles5.articleText, children: /* @__PURE__ */ jsx5(
-      Content,
-      {
-        text,
-        lang,
-        articleId: articleData.id
-      }
-    ) })
+    /* @__PURE__ */ jsx5("div", { className: styles5.articleText, children })
   ] });
 }
 
