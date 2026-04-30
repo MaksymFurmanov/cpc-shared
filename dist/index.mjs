@@ -138,6 +138,16 @@ function ArticleLoading() {
   ] });
 }
 
+// src/ui/articles/skeletons/ArticlesListLoading.tsx
+import styles7 from "./articles-skeletons.module-V6WRGZMG.module.css";
+import { jsx as jsx7, jsxs as jsxs4 } from "react/jsx-runtime";
+function ArticlesListLoading() {
+  return /* @__PURE__ */ jsxs4("div", { className: styles7.container, children: [
+    /* @__PURE__ */ jsx7("div", { children: /* @__PURE__ */ jsx7("div", { className: `${styles7.paginationSkeleton} ${styles7.skeleton}` }) }),
+    /* @__PURE__ */ jsx7(ArticleLoading, {})
+  ] });
+}
+
 // src/types/articles.ts
 var ArticleType = /* @__PURE__ */ ((ArticleType2) => {
   ArticleType2["NEWS"] = "news";
@@ -149,6 +159,7 @@ export {
   ArticleLoading,
   ArticleText,
   ArticleType,
+  ArticlesListLoading,
   BackBtn,
   Gallery,
   useImgPreload

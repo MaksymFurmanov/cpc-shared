@@ -34,6 +34,7 @@ __export(index_exports, {
   ArticleLoading: () => ArticleLoading,
   ArticleText: () => ArticleText,
   ArticleType: () => ArticleType,
+  ArticlesListLoading: () => ArticlesListLoading,
   BackBtn: () => BackBtn,
   Gallery: () => Gallery,
   useImgPreload: () => useImgPreload
@@ -180,6 +181,16 @@ function ArticleLoading() {
   ] });
 }
 
+// src/ui/articles/skeletons/ArticlesListLoading.tsx
+var import_articles_skeletons3 = __toESM(require("./articles-skeletons.module-V6WRGZMG.module.css"));
+var import_jsx_runtime7 = require("react/jsx-runtime");
+function ArticlesListLoading() {
+  return /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)("div", { className: import_articles_skeletons3.default.container, children: [
+    /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("div", { children: /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("div", { className: `${import_articles_skeletons3.default.paginationSkeleton} ${import_articles_skeletons3.default.skeleton}` }) }),
+    /* @__PURE__ */ (0, import_jsx_runtime7.jsx)(ArticleLoading, {})
+  ] });
+}
+
 // src/types/articles.ts
 var ArticleType = /* @__PURE__ */ ((ArticleType2) => {
   ArticleType2["NEWS"] = "news";
@@ -192,6 +203,7 @@ var ArticleType = /* @__PURE__ */ ((ArticleType2) => {
   ArticleLoading,
   ArticleText,
   ArticleType,
+  ArticlesListLoading,
   BackBtn,
   Gallery,
   useImgPreload
