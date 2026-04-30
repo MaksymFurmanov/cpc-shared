@@ -7,7 +7,6 @@ import {ComponentType} from "react";
 
 type ContentProps = {
     text: string  | null,
-    lang: string,
     articleId: string,
 }
 
@@ -28,7 +27,6 @@ export function ArticleText({articleData, lang, Content,}: {
 
             <div className={styles.articleText}>
                 <Content text={text}
-                         lang={lang}
                          articleId={articleData.id}
                 />
             </div>
